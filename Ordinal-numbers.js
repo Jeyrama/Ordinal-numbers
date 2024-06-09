@@ -53,3 +53,14 @@ Notes:
 
 
 // Solution
+
+function ordinal(number, brief) {
+  let lastDigit = number % 10;
+  let penultimateDigit = ((number - lastDigit) / 10) % 10;
+  
+  if(penultimateDigit === 1 || lastDigit === 0 || lastDigit >= 4) return "th";
+  if(lastDigit === 1) return "st";
+  if(brief) return "d";
+  if(lastDigit === 2) return "nd";
+  if(lastDigit === 3) return "rd";
+}
