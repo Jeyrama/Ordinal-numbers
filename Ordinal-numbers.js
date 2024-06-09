@@ -64,3 +64,5 @@ function ordinal(number, brief) {
   if(lastDigit === 2) return "nd";
   if(lastDigit === 3) return "rd";
 }
+
+// or
