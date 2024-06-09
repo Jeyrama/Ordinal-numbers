@@ -66,3 +66,17 @@ function ordinal(number, brief) {
 }
 
 // or
+
+const ordinal = (number, brief) => {
+  const map = {
+    0: 'th', 1: 'st', 2: 'nd', 3: 'rd', 4: 'th', 5: 'th', 6: 'th', 7: 'th', 8: 'th', 9: 'th',
+    10: 'th', 11: 'th', 12: 'th', 13: 'th'
+  };
+  
+  let result;
+  if (number <= 13) result = map[number]
+  else if (map[`${number}`.slice(-2)]) result = map[`${number}`.slice(-2)];
+  else result = map[`${number}`.slice(-1)];
+  
+  return brief ? result.replace(/nd|rd/g, 'd') : result;
+}
